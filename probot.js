@@ -4,7 +4,7 @@ const fs = require("fs");
 const dateFormat = require('dateformat');
 const client = new Discord.Client(); 
 const Canvas = require("canvas"); 
-const prefix = "+";
+const prefix = ">";
 const token = 'BOT_TOKEN';
 const antihack = JSON.parse(fs.readFileSync('./antihack.json' , 'utf8'));
 const antijoin = JSON.parse(fs.readFileSync('./antijoin.json' , 'utf8'));
@@ -18,7 +18,7 @@ client.on('guildMemberAdd', member => {
     .setDescription('***بكل حب واحترام وشوق نستقبلك ونتمنى لك قضآء أجمل اللحظات ولآوقات معنا***')
     .setColor('RANDOM')
     .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
-var channel =member.guild.channels.find('name', '✿-welcome_الـترحــيـب')
+var channel =member.guild.channels.find('name', '✻-welcome_ويــلكم-✻')
 if (!channel) return;
 channel.send({embed : embed});
 });
@@ -90,7 +90,7 @@ client.on("message", async function (msg) {
  const yourID = "411613098923786241"; 
 const setupCMD = `${prefix}activterole`
 let initialMessage = ``;
-const roles = ["♱  عــــضــــو ☯"];
+const roles = ["→★ عـــضـــو • Members  ★←"];
 const reactions = ['☑'];
  
 
@@ -183,7 +183,7 @@ client.on('raw', event => {
   
 client.on('message', message => {
 if(message.content.startsWith(prefix +'كيف ادخل تجمعات'))  {  
-    message.channel.send("كيفية الدخول معنا في التجمعات؟** \n 1 تسحب الشاشة من اليسار الى اليمين \n 2 تدخل روم اسمه تجمعات \n 3 وهكدا انت معنا في تجمعات");
+    message.channel.send(`كيفية الدخول معنا في التجمعات؟** \n 1 تسحب الشاشة من اليسار الى اليمين \n 2 تدخل روم اسمه تجمعات \n 3 وهكدا انت معنا في تجمعات`);
     }
   });
 
@@ -1965,7 +1965,7 @@ if(!message.channel.guild) return;
   }
 });
 client.on('message', message => {
-  if (message.content === "+support") {
+  if (message.content === `${prefix}support`) {
   let embed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
 .setColor("#9B59B6")
@@ -2354,7 +2354,7 @@ client.on('ready', () => {
     console.log(`[ ] ${client.users.size}`)
 });
 client.on('ready', () => {
-     client.user.setActivity("+help | +inv",{type: 'Streaming'});
+     client.user.setActivity(`${prefix}help | ${prefix}inv`,{type: 'Streaming'});
 
 });
 
